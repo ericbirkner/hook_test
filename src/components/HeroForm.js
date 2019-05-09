@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function HeroForm() {
+function HeroForm(props) {
 
   const heroObject = {
     name: '',
@@ -23,6 +23,7 @@ function HeroForm() {
 
   const handleSubmit = event => {
     event.preventDefault()
+    props.onSubmit()
   }
 
   return (

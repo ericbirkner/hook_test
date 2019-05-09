@@ -26,7 +26,7 @@ function App() {
   return (
     <div>
       <h3> This is a Functional Component </h3>
-      <HeroForm heroSubmit={saveHero}/>
+      <HeroForm onSubmit={saveHero}/>
     </div>
   );
 };
