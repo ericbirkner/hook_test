@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 function HeroRow (props) {
+  const { killHero } = props
   const { name, race, age, weapon, id, status } = props.hero
 
   const isDead = status === 'dead'
@@ -18,7 +19,7 @@ function HeroRow (props) {
         <td>{weapon}</td>
         <td>
           <div className="controls">
-            <div >☠ Kill</div>
+            <div onClick={(e) => killHero(id, e)} >☠ Kill</div>
             <div>💍 Use Ring</div>
           </div>
         </td>

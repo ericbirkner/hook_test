@@ -16,18 +16,30 @@ function App() {
   const [heroes,setHeroes] = useState(heroesAux);
 
   const saveHero= (values)=> {
-
     const id = (heroes.length + 1).toString();
     const newItem = {...values, id}
     setHeroes([ ...heroes, newItem ]);
-
   }
+
+  const killHero = (id) => {
+    console.log(id);
+    /*
+    setHeroes({
+        ...heroes,
+        [heroIdUsingRing]: {
+          ...heroes[heroIdUsingRing],
+          status: '',
+        }
+    });
+    */
+  }
+
 
   return (
     <div>
       <h3> This is a Functional Component </h3>
       <HeroForm onSubmit={saveHero} />
-      <HeroTable heroes={heroes}/>
+      <HeroTable heroes={heroes} killHero={killHero}/>
     </div>
   );
 };

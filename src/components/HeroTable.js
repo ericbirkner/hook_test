@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import HeroRow from './HeroRow'
 
-function HeroTable ({heroes}){
+function HeroTable ({heroes,killHero}){
   console.log(heroes);
 
   return(
-    <table className="characters-table" border="1" align="center"> 
+    <table className="characters-table" border="1" align="center">
       <tbody>
         <tr className="character-row">
           <th>Name</th>
@@ -19,6 +19,7 @@ function HeroTable ({heroes}){
           <HeroRow
             key={index}
             hero={hero}
+            killHero={killHero}
           />
         ))}
 
