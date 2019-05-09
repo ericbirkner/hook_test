@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import HeroForm from './components/HeroForm'
+import HeroTable from './components/HeroTable'
 import './App.css';
 
 const heroesAux = [{ id: '1', name: 'Gandalf', race: 'Maia', age: '2019', weapon: 'Staff 🏑' },
@@ -13,21 +14,20 @@ const heroesAux = [{ id: '1', name: 'Gandalf', race: 'Maia', age: '2019', weapon
 
 function App() {
   const [heroes,setHeroes] = useState(heroesAux);
-  console.log(heroes);
 
   const saveHero= (values)=> {
 
     const id = (heroes.length + 1).toString();
     const newItem = {...values, id}
-
     setHeroes([ ...heroes, newItem ]);
-  
+
   }
 
   return (
     <div>
       <h3> This is a Functional Component </h3>
-      <HeroForm onSubmit={saveHero}/>
+      <HeroForm onSubmit={saveHero} />
+      <HeroTable heroes={heroes}/>
     </div>
   );
 };

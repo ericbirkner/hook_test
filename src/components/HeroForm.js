@@ -14,7 +14,6 @@ function HeroForm(props) {
   const handleChange = event => {
     const name = event.target.name
     const value = event.target.value
-    console.log(event.target.name);
     setValues({
       ...values,
       [name]: value
