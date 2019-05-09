@@ -23,7 +23,7 @@ function HeroForm(props) {
 
   const handleSubmit = event => {
     event.preventDefault()
-    props.onSubmit()
+    props.onSubmit(values)
   }
 
   return (

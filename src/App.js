@@ -16,11 +16,23 @@ function App() {
   console.log(heroes);
 
   const saveHero= (values)=> {
+    let newitem =heroes.length;
+    console.log(newitem);
+
+    let newId =heroes.length+1;
+
+    newId = newId.toString();
     console.log(values);
-     setHeroes({
-        ...heroes,
-          ...values
-      });
+
+    setHeroes({
+       ...heroes,
+       [newitem]: {
+         ...values,
+         id: newId
+       }
+     });
+  
+    console.log(heroes);
   }
 
   return (
