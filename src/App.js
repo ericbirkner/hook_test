@@ -28,7 +28,7 @@ function App() {
 
     setHeroes([
        ...heroes,
-       [newitem]: {
+      {
          ...values,
          id: newId
        }
