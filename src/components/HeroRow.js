@@ -2,18 +2,16 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 const HeroRow = props => {
-  const { onRowClick } = props
-  const { name, race, age, weapon, id, status } = props.hero
+  const { onRowClick, hero } = props
+  const { name, race, age, weapon, id, status } = hero
 
   const isDead = status === 'dead'
 
-  let toReturn
-
   if (status === 'using-ring') {
-    toReturn = null
-  } else {
-    toReturn = (
-      <tr className={`${isDead ? 'dead' : ''}`}>
+    return null
+  }
+
+  return  <tr className={`${isDead ? 'dead' : ''}`}>
         <td>{name}</td>
         <td>{race}</td>
         <td>{age}</td>
@@ -25,10 +23,6 @@ const HeroRow = props => {
           </div>
         </td>
       </tr>
-    )
-  }
-
-  return toReturn
 }
 
 HeroRow.propTypes = {
