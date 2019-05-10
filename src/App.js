@@ -39,7 +39,7 @@ function App() {
     <div>
       <h3> This is a Functional Component </h3>
       <HeroForm onSubmit={saveHero} />
-      <HeroTable heroes={heroes} killHero={killHero}/>
+      <HeroTable heroes={heroes} onKillHero={killHero}/>
     </div>
   );
 };
