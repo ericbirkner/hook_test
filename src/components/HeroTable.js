@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import HeroRow from './HeroRow'
+import PropTypes from "prop-types"
 
-function HeroTable ({heroes,killHero}){
-  console.log(heroes);
 
-  return(
-    <table className="characters-table" border="1" align="center">
+const HeroTable = props => {
+  
+  const { heroes, killHero } = props
+
+  return <table className="characters-table" border="1" align="center">
       <tbody>
         <tr className="character-row">
           <th>Name</th>
@@ -24,9 +26,19 @@ function HeroTable ({heroes,killHero}){
         ))}
 
       </tbody>
-    </table>);
+    </table>
 }
 
-
+HeroTable.propTypes = {
+  heroes: PropTypes.array,
+  killHero: PropTypes.shape({
+    name: PropTypes.string, 
+    race: PropTypes.string, 
+    age: PropTypes.string, 
+    weapon: PropTypes.string, 
+    id: PropTypes.string, 
+    status: PropTypes.oneOf(['using-ring', 'dead'])
+  })
+}
 
 export default HeroTable
