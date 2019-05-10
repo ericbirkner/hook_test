@@ -14,6 +14,7 @@ const heroesAux = [{ id: '1', name: 'Gandalf', race: 'Maia', age: '2019', weapon
 
 function App() {
   const [heroes,setHeroes] = useState(heroesAux);
+  const [killedHeroId,setkilledHeroId] = useState(null);
 
   const saveHero= (values)=> {
     const id = (heroes.length + 1).toString();
@@ -23,15 +24,21 @@ function App() {
 
   const killHero = (id) => {
     console.log(id);
+    setkilledHeroId(id);
+    let indice = parseInt(id)-1;
+
+    heroes[indice].status = "dead"
+    
     /*
     setHeroes({
         ...heroes,
-        [heroIdUsingRing]: {
-          ...heroes[heroIdUsingRing],
-          status: '',
+        [indice]: {
+
+          status: 'dead'
         }
     });
     */
+
   }
 
 

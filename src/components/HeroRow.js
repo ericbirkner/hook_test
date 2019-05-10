@@ -19,7 +19,7 @@ function HeroRow (props) {
         <td>{weapon}</td>
         <td>
           <div className="controls">
-            <div onClick={(e) => killHero(id, e)} >☠ Kill</div>
+            <div onClick={(e) => killHero(id, e)} className= {status=="dead" ? 'dead' : ''} >☠ Kill</div>
             <div>💍 Use Ring</div>
           </div>
         </td>
